@@ -72,17 +72,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     langBtns.forEach(btn => btn.addEventListener('click', () => changeLanguage(btn.getAttribute('data-lang'))));
     
-    // DEFAULT LANGUAGE = 'en'
     const savedLang = localStorage.getItem('lang') || 'en';
     changeLanguage(savedLang);
 
-    // 3. SCROLL REVEAL
+    // 3. SCROLL REVEAL (Анимацияның пайда болуы)
     const hiddenElements = document.querySelectorAll('.hidden');
     const appearObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('show');
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
         });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.1 }); // 10% көрінсе жеткілікті
     hiddenElements.forEach((el) => appearObserver.observe(el));
 
     // 4. МЕНЮ
@@ -115,24 +116,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.3 });
     document.querySelectorAll('section').forEach(sec => sectionObserver.observe(sec));
     
-    // Burger Menu (МОБИЛЬДІ МЕНЮДІ ЖАБУ ЛОГИКАСЫ ҚОСЫЛДЫ)
+    // Burger Menu (МОБИЛЬДІ МЕНЮДІ ЖАБУ ЛОГИКАСЫ)
     const burger = document.querySelector('.burger');
     const mobileMenu = document.querySelector('.mobile-menu-overlay');
-    
-    burger.addEventListener('click', () => { 
-        burger.classList.toggle('toggle'); 
-        mobileMenu.classList.toggle('active'); 
-        document.body.classList.toggle('no-scroll'); 
-    });
-    
-    // Сілтемені басқанда меню жабылуы керек
-    document.querySelectorAll('.mobile-links a').forEach(link => {
-        link.addEventListener('click', () => { 
-            burger.classList.remove('toggle'); 
-            mobileMenu.classList.remove('active'); 
-            document.body.classList.remove('no-scroll'); 
-        });
-    });
+    burger.addEventListener('click', () => { burger.classList.toggle('toggle'); mobileMenu.classList.toggle('active'); document.body.classList.toggle('no-scroll'); });
+    document.querySelectorAll('.mobile-links a').forEach(link => link.addEventListener('click', () => { burger.classList.remove('toggle'); mobileMenu.classList.remove('active'); document.body.classList.remove('no-scroll'); }));
 
     // 5. TYPEWRITER EFFECT
     const typed = new Typed('.multiple-text', {
@@ -205,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (el) el.remove();
     }
 
-    // --- БОТ МИЫ (3 ТІЛДЕ) ---
+    // --- БОТ МИЫ ---
     function getBotReply(input) {
         const lowerInput = input.toLowerCase();
         const currentLang = localStorage.getItem('lang') || 'en';
@@ -235,5 +223,4 @@ document.addEventListener('DOMContentLoaded', () => {
         if (lowerInput.includes('project')) return "Check out my code on <a href='https://github.com/dossymzhanaubakirov-prog' target='_blank' style='color: #34d399;'>GitHub</a>!";
         return "I'm not sure. Try asking about my <b>skills</b> or <b>contacts</b>.";
     }
-
 });
