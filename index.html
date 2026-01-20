@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Dosymzhan Aubakir | Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -32,9 +32,9 @@
 
             <div class="nav-actions">
                 <div class="lang-switch desktop-lang">
-                    <span class="lang-btn" data-lang="kz">KZ</span>
+                    <span class="lang-btn active" data-lang="kz">KZ</span>
                     <span class="divider">|</span>
-                    <span class="lang-btn active" data-lang="en">EN</span>
+                    <span class="lang-btn" data-lang="en">EN</span>
                     <span class="divider">|</span>
                     <span class="lang-btn" data-lang="ru">RU</span>
                 </div>
@@ -45,27 +45,27 @@
                 </div>
             </div>
         </nav>
-
-        <div class="mobile-menu-overlay">
-            <ul class="mobile-links">
-                <li><a href="#hero" data-i18n="nav_home">Home</a></li>
-                <li><a href="#about" data-i18n="nav_about">About</a></li>
-                <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
-                <li><a href="#hobbies" data-i18n="nav_hobbies">Hobbies</a></li>
-                <li><a href="#interests" data-i18n="nav_interests">Interests</a></li>
-                <li><a href="#education" data-i18n="nav_exp">Experience</a></li>
-                <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
-            </ul>
-
-            <div class="lang-switch mobile-lang">
-                <span class="lang-btn" data-lang="kz">KZ</span>
-                <span class="divider">|</span>
-                <span class="lang-btn active" data-lang="en">EN</span>
-                <span class="divider">|</span>
-                <span class="lang-btn" data-lang="ru">RU</span>
-            </div>
-        </div>
     </header>
+
+    <div class="mobile-menu-overlay">
+        <ul class="mobile-links">
+            <li><a href="#hero" data-i18n="nav_home">Home</a></li>
+            <li><a href="#about" data-i18n="nav_about">About</a></li>
+            <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+            <li><a href="#hobbies" data-i18n="nav_hobbies">Hobbies</a></li>
+            <li><a href="#interests" data-i18n="nav_interests">Interests</a></li>
+            <li><a href="#education" data-i18n="nav_exp">Experience</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+
+        <div class="lang-switch mobile-lang">
+            <span class="lang-btn active" data-lang="kz">KZ</span>
+            <span class="divider">|</span>
+            <span class="lang-btn" data-lang="en">EN</span>
+            <span class="divider">|</span>
+            <span class="lang-btn" data-lang="ru">RU</span>
+        </div>
+    </div>
 
     <section id="hero" class="hero-section">
         <div class="hero-content glass">
@@ -204,7 +204,6 @@
                 <div class="socials">
                     <a href="https://www.instagram.com/dossymzhan_aubakir/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
                     <a href="https://t.me/dosymzhan_aubakir" target="_blank" class="social-icon"><i class="fab fa-telegram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/dossymzhanaubakirov-prog" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
                     <a href="mailto:aubakirovdosymzhan@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
                 </div>
