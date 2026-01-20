@@ -304,8 +304,15 @@ footer { padding: 3rem; text-align: center; margin-top: 4rem; border-radius: 30p
     .section-title { font-size: 1.8rem !important; overflow-wrap: break-word; padding: 0 10px; }
 }
 
-/* Interests - Иконка анимациясы */
-.interests-wrapper { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+/* =========================================
+   INTERESTS - ЖҰМСАҚ АНИМАЦИЯ (NO JITTER)
+   ========================================= */
+.interests-wrapper { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 15px; 
+}
 
 .interest-tag { 
     background: rgba(255, 255, 255, 0.02); 
@@ -316,38 +323,226 @@ footer { padding: 3rem; text-align: center; margin-top: 4rem; border-radius: 30p
     font-size: 0.95rem; 
     font-weight: 500; 
     cursor: default; 
-    transition: all 0.3s ease; 
     backdrop-filter: blur(5px); 
     
-    /* Flex арқылы иконка мен мәтінді түзейміз */
+    /* Flex арқылы туралау */
     display: inline-flex;
     align-items: center;
     justify-content: center;
-}
 
-/* Иконканың бастапқы күйі (Жасырын) */
-.interest-tag i {
-    max-width: 0;
+    /* МАҢЫЗДЫ: Анимация уақытын синхрондау */
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); 
+    
+    /* Артық элементтер сыртқа шықпауы үшін */
     overflow: hidden;
-    opacity: 0;
-    margin-left: 0;
-    transition: all 0.4s ease-in-out; /* Жұмсақ шығу */
-    color: #fff;
+    position: relative;
 }
 
-/* Hover болғанда (Түрткенде) */
+/* Иконка бастапқыда (Жасырын) */
+.interest-tag i {
+    max-width: 0;      /* Ені жоқ */
+    opacity: 0;        /* Көрінбейді */
+    margin-left: 0;    /* Шегініс жоқ */
+    transform: translateX(-10px); /* Сәл солға ығысқан */
+    
+    /* Иконка анимациясы контейнермен бірдей болуы керек */
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Hover (Тышқан барғанда) - Контейнер */
 .interest-tag:hover { 
     background: linear-gradient(135deg, var(--accent-color), var(--accent-hover)); 
     color: #fff; 
     border-color: transparent; 
     box-shadow: 0 5px 15px var(--accent-glow); 
-    transform: translateY(-3px); 
-    padding-right: 20px; /* Иконка шыққанда орын ашу */
+    transform: translateY(-2px); 
+    
+    /* Padding-ті өзгертпейміз! Тек иконка ашылсын */
 }
 
-/* Hover болғанда иконканы көрсету */
+/* Hover (Тышқан барғанда) - Иконка */
 .interest-tag:hover i {
-    max-width: 20px; /* Иконка ені */
+    max-width: 25px;   /* Ені ашылады */
+    opacity: 1;        /* Көрінеді */
+    margin-left: 8px;  /* Мәтіннен алшақтайды */
+    transform: translateX(0); /* Орнына келеді */
+}
+
+/* --- TYPEWRITER ЭФФЕКТ СТИЛІ --- */
+.multiple-text {
+    color: var(--accent-color); /* Жасыл түс (#34d399) */
+    font-weight: 700;
+}
+
+/* Теру курсорының түсі */
+.typed-cursor {
+    color: var(--accent-color);
+}
+
+
+/* =========================================
+   AI CHATBOT WIDGET
+   ========================================= */
+.chatbot-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* Дөңгелек батырма */
+#chat-toggle-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px var(--accent-glow);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#chat-toggle-btn:hover {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 8px 25px var(--accent-glow);
+}
+
+/* Чат терезесі */
+.chat-window {
+    width: 350px;
+    height: 450px;
+    background: rgba(15, 25, 20, 0.85); /* Қою жасыл шыны */
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    
+    /* Анимация үшін */
+    transform-origin: bottom right;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     opacity: 1;
-    margin-left: 10px; /* Мәтіннен алшақтату */
+    transform: scale(1);
+}
+
+/* Жасырын күйі */
+.hidden-chat {
+    opacity: 0;
+    transform: scale(0) translateY(20px);
+    pointer-events: none;
+}
+
+/* Чат бас жағы */
+.chat-header {
+    padding: 15px 20px;
+    background: rgba(52, 211, 153, 0.1);
+    border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bot-info { display: flex; align-items: center; gap: 10px; }
+.bot-avatar {
+    width: 35px; height: 35px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+}
+.chat-header h4 { font-size: 1rem; color: #fff; font-weight: 600; margin: 0; }
+.status { font-size: 0.75rem; color: var(--accent-color); }
+#close-chat { background: none; border: none; color: rgba(255,255,255,0.6); cursor: pointer; font-size: 1.1rem; transition: 0.3s; }
+#close-chat:hover { color: #fff; }
+
+/* Хабарламалар аймағы */
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Scrollbar әдемілеу */
+.chat-messages::-webkit-scrollbar { width: 5px; }
+.chat-messages::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+
+/* Хабарлама стильдері */
+.message {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    word-wrap: break-word;
+    animation: fadeIn 0.3s ease;
+}
+
+.bot-message {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+}
+
+.user-message {
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+    color: #fff;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+    box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Input аймағы */
+.chat-input-area {
+    padding: 15px;
+    border-top: 1px solid var(--glass-border);
+    display: flex;
+    gap: 10px;
+}
+
+#user-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    padding: 10px 15px;
+    border-radius: 25px;
+    color: #fff;
+    outline: none;
+    transition: 0.3s;
+}
+#user-input:focus { border-color: var(--accent-color); background: rgba(255, 255, 255, 0.1); }
+
+#send-btn {
+    background: var(--accent-color);
+    border: none;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex; align-items: center; justify-content: center;
+}
+#send-btn:hover { transform: scale(1.1); box-shadow: 0 0 15px var(--accent-glow); }
+
+/* Мобильді адаптация */
+@media screen and (max-width: 480px) {
+    .chat-window { width: 300px; height: 400px; right: 0; bottom: 70px; }
+    .chatbot-container { right: 20px; bottom: 20px; }
 }
