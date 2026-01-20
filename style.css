@@ -205,32 +205,28 @@ footer { padding: 3rem; text-align: center; margin-top: 4rem; border-radius: 30p
    9. MOBILE & TABLET ADAPTATION (ТҮЗЕТІЛГЕН)
    ========================================= */
 @media screen and (max-width: 1024px) {
-    /* 1-МӘСЕЛЕ: Меню шетке жабысып қалған */
-    .navbar { min-width: unset; width: 90%; padding: 10px 25px; /* Padding оң/сол жақтан көбейтілді */ }
+    /* Меню (Бургер шетке жабыспауы үшін) */
+    .navbar { min-width: unset; width: 90%; padding: 10px 20px; }
     .nav-links { display: none !important; }
-    .burger { display: flex; margin-right: 5px; /* Шеттен сәл алшақтату */ }
+    .burger { display: flex; margin-right: 15px; /* Шеттен алшақтату */ }
     .nav-actions { margin-left: auto; border: none; padding-left: 0; }
     
+    /* Hero секциясы */
     .hero-section { flex-direction: column-reverse; text-align: center; padding-top: 140px; height: auto; }
     
-    /* 2, 3 және 4 МӘСЕЛЕЛЕР: Атыңыздың қысылуы және KZ-дағы жылжу */
+    /* Мәтін картасы */
     .hero-content { 
-        width: 90%; /* Карта экранға қатты жабыспайды */
+        width: 90%; 
         height: auto; 
-        min-height: auto; /* Фиксацияны алып тастаймыз */
         animation: none; 
-        padding: 4rem 2rem; /* Асты-үстіне көбірек орын (4rem) берілді */
+        padding: 4rem 2rem; 
         display: flex;
         flex-direction: column;
-        align-items: center; /* Элементтер ортада тұрады */
-        gap: 20px; /* Элементтер бір-біріне жабыспайды */
+        align-items: center; 
+        gap: 20px; 
     }
     
-    .hero-content h1 { 
-        font-size: 2.3rem; /* Атыңыздың шрифті сәл кішірейтілді (сыю үшін) */
-        line-height: 1.2;
-    }
-    
+    .hero-content h1 { font-size: 2.3rem; line-height: 1.2; }
     .hero-content h2 { font-size: 1.2rem; margin-top: 5px; }
     
     .hero-image { width: 300px; height: 400px; animation: none; margin-bottom: 2rem; }
@@ -239,7 +235,7 @@ footer { padding: 3rem; text-align: center; margin-top: 4rem; border-radius: 30p
     .cta-buttons { justify-content: center; width: 100%; gap: 15px; }
     .btn { width: 100%; max-width: 300px; margin: 0; }
 
-    /* Timeline (Телефонда екі жақта қалуы үшін) */
+    /* Timeline */
     .timeline::after { left: 50% !important; } 
     .timeline-item { width: 42% !important; padding: 1rem !important; margin-bottom: 2rem !important; }
     .timeline-item:nth-child(even) { left: 55% !important; text-align: left; }
@@ -249,4 +245,11 @@ footer { padding: 3rem; text-align: center; margin-top: 4rem; border-radius: 30p
     .timeline-item h3 { font-size: 0.9rem; }
     .timeline-item p { font-size: 0.8rem; line-height: 1.3; }
     .date { font-size: 0.75rem; }
+
+    /* --- ЖАҢА ӨЗГЕРІС: Тақырыпты кішірейту (Қызығушылықтарым) --- */
+    .section-title {
+        font-size: 1.8rem !important; /* Мобильдіде кішірейту */
+        overflow-wrap: break-word; /* Ұзын сөздерді тасымалдау */
+        padding: 0 10px;
+    }
 }
