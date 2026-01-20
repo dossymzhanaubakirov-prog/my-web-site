@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. АУДАРМАЛАР
+    // 1. АУДАРМАЛАР (UI + CHATBOT)
     const translations = {
         kz: {
             nav_home: "Басты бет", nav_about: "Мен туралы", nav_skills: "Дағдылар", nav_hobbies: "Хобби", nav_interests: "Қызығушылықтар", nav_exp: "Тәжірибе", nav_contact: "Байланыс",
@@ -13,11 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
             hobby_section_title: "Хоббилерім", hobby_sport_title: "Теннис", hobby_sport_desc: "Үстел және Үлкен теннис", hobby_type_title: "Speed Typing", hobby_type_desc: "Жылдамдық пен Фокус", hobby_clean_title: "Музыка & Тазалық", hobby_clean_desc: "Көтеріңкі көңіл-күй", hobby_info_title: "Жаңа технологиялар", hobby_info_desc: "AI және IT зерттеу",
             
             interests_title: "Қызығушылықтарым", 
-            // Иконкалар үшін тексті қысқа ұстаймыз
             int_space: "Космос", int_physics: "Физика",
             int_it: "IT", int_tech: "Технология", int_company: "Компания", int_world: "Әлем", int_planet: "Планета", int_sports: "Спорт", int_movie: "Кино", int_music: "Музыка", int_natural: "Табиғат", int_business: "Бизнес", int_crypto: "Крипто", int_science: "Ғылым", int_football: "Футбол", int_health: "Денсаулық", int_news: "Жаңалықтар", int_politics: "Саясат", int_travel: "Саяхат", int_stocks: "Акциялар", int_social: "Желілер", int_gym: "Зал", int_ai: "AI", int_photo: "Фото", int_video: "Видео", int_religion: "Дін",
             
-            exp_title: "Тәжірибе және Білім", job1_role: "IT Маманы (Remote)", job1_place: "Hotel Rixos Turkistan", job1_desc: "Мобильді қосымшалар мен IT жобаларын басқару, сервер мен желіні қолдау.", job2_role: "Фрилансер", job2_place: "Kwork платформасы", job2_desc: "Mobile, Web және IT қызметтері. Тапсырыс бойынша сапалы қосымшалар әзірлеу.", job3_role: "Тендер Менеджері", job3_place: "Мемлекеттік сатып алу / Самұрық-Қазына", job3_desc: "Тендерлік құжаттама және мемлекеттік сатып алу процестерін жүргізу.", edu_role: "Студент", edu_place: "Әл-Фараби атындағы ҚазҰУ", edu_desc: "Мамандық: Компьютерлік ғылымдар (Computer Science).", footer_rights: "Барлық құқықтар қорғалған."
+            exp_title: "Тәжірибе және Білім", job1_role: "IT Маманы (Remote)", job1_place: "Hotel Rixos Turkistan", job1_desc: "Мобильді қосымшалар мен IT жобаларын басқару, сервер мен желіні қолдау.", job2_role: "Фрилансер", job2_place: "Kwork платформасы", job2_desc: "Mobile, Web және IT қызметтері. Тапсырыс бойынша сапалы қосымшалар әзірлеу.", job3_role: "Тендер Менеджері", job3_place: "Мемлекеттік сатып алу / Самұрық-Қазына", job3_desc: "Тендерлік құжаттама және мемлекеттік сатып алу процестерін жүргізу.", edu_role: "Студент", edu_place: "Әл-Фараби атындағы ҚазҰУ", edu_desc: "Мамандық: Компьютерлік ғылымдар (Computer Science).", footer_rights: "Барлық құқықтар қорғалған.",
+            
+            // Чат-боттың алғашқы сәлемі
+            bot_welcome: "Сәлем! 👋 Мен Досымжанның виртуалды көмекшісімін. Менен оның <b>дағдылары</b>, <b>байланыс</b> немесе <b>тәжірибесі</b> туралы сұраңыз!"
         },
 
         en: {
@@ -33,7 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
             int_space: "Space", int_physics: "Physics",
             int_it: "IT", int_tech: "Technology", int_company: "Company", int_world: "World", int_planet: "Planet", int_sports: "Sports", int_movie: "Movie", int_music: "Music", int_natural: "Natural", int_business: "Business", int_crypto: "Crypto", int_science: "Science", int_football: "Football", int_health: "Health", int_news: "News", int_politics: "Politics", int_travel: "Travel", int_stocks: "Stocks", int_social: "Social Networks", int_gym: "Gym", int_ai: "Artificial", int_photo: "Photo", int_video: "Video", int_religion: "Religion",
             
-            exp_title: "Experience & Education", job1_role: "Remote IT Specialist", job1_place: "Hotel Rixos Turkistan", job1_desc: "Remotely managing mobile applications, IT projects, and resolving server/network issues.", job2_role: "Freelancer", job2_place: "Kwork Platform", job2_desc: "Providing Mobile, Web, and IT services. Developing applications based on specific client requirements.", job3_role: "Tender Manager", job3_place: "Public Procurement / Samruk Kazyna", job3_desc: "Management of tender documentation and public procurement processes.", edu_role: "Student", edu_place: "Al-Farabi KazNU", edu_desc: "Major: Computer Science.", footer_rights: "All rights reserved."
+            exp_title: "Experience & Education", job1_role: "Remote IT Specialist", job1_place: "Hotel Rixos Turkistan", job1_desc: "Remotely managing mobile applications, IT projects, and resolving server/network issues.", job2_role: "Freelancer", job2_place: "Kwork Platform", job2_desc: "Providing Mobile, Web, and IT services. Developing applications based on specific client requirements.", job3_role: "Tender Manager", job3_place: "Public Procurement / Samruk Kazyna", job3_desc: "Management of tender documentation and public procurement processes.", edu_role: "Student", edu_place: "Al-Farabi KazNU", edu_desc: "Major: Computer Science.", footer_rights: "All rights reserved.",
+            
+            // Chatbot Welcome
+            bot_welcome: "Hello! 👋 I am Dosymzhan's virtual assistant. Ask me about his <b>skills</b>, <b>contacts</b>, or <b>experience</b>!"
         },
 
         ru: {
@@ -49,11 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
             int_space: "Космос", int_physics: "Физика",
             int_it: "IT", int_tech: "Технологии", int_company: "Компании", int_world: "Мир", int_planet: "Планета", int_sports: "Спорт", int_movie: "Кино", int_music: "Музыка", int_natural: "Природа", int_business: "Бизнес", int_crypto: "Крипто", int_science: "Наука", int_football: "Футбол", int_health: "Здоровье", int_news: "Новости", int_politics: "Политика", int_travel: "Путешествия", int_stocks: "Акции", int_social: "Соцсети", int_gym: "Зал", int_ai: "ИИ", int_photo: "Фото", int_video: "Видео", int_religion: "Религия",
             
-            exp_title: "Опыт и Образование", job1_role: "Remote IT Specialist", job1_place: "Hotel Rixos Turkistan", job1_desc: "Удаленное управление мобильными приложениями и IT-проектами, поддержка серверов.", job2_role: "Фрилансер", job2_place: "Платформа Kwork", job2_desc: "Услуги Mobile, Web и IT. Разработка приложений и сервисов под требования клиентов.", job3_role: "Тендер Менеджер", job3_place: "Госзакуп / Самрук Казына", job3_desc: "Полное управление процессами тендеров и государственных закупок.", edu_role: "Студент", edu_place: "КазНУ им. аль-Фараби", edu_desc: "Специальность: Компьютерные науки (CS).", footer_rights: "Все права защищены."
+            exp_title: "Опыт и Образование", job1_role: "Remote IT Specialist", job1_place: "Hotel Rixos Turkistan", job1_desc: "Удаленное управление мобильными приложениями и IT-проектами, поддержка серверов.", job2_role: "Фрилансер", job2_place: "Платформа Kwork", job2_desc: "Услуги Mobile, Web и IT. Разработка приложений и сервисов под требования клиентов.", job3_role: "Тендер Менеджер", job3_place: "Госзакуп / Самрук Казына", job3_desc: "Полное управление процессами тендеров и государственных закупок.", edu_role: "Студент", edu_place: "КазНУ им. аль-Фараби", edu_desc: "Специальность: Компьютерные науки (CS).", footer_rights: "Все права защищены.",
+            
+            // Chatbot Welcome
+            bot_welcome: "Привет! 👋 Я виртуальный помощник Досымжана. Спросите меня о его <b>навыках</b>, <b>контактах</b> или <b>опыте</b>!"
         }
     };
 
-    // 2. СМЕНА ЯЗЫКА (ТҮЗЕТІЛГЕН: ИКОНКАЛАР ӨШПЕЙДІ)
+    // 2. СМЕНА ЯЗЫКА
     const langBtns = document.querySelectorAll('.lang-btn');
     const allTextElements = document.querySelectorAll('[data-i18n]');
     
@@ -61,15 +69,16 @@ document.addEventListener('DOMContentLoaded', () => {
         allTextElements.forEach(el => {
             const key = el.getAttribute('data-i18n');
             if (translations[lang][key]) {
-                // Иконка бар ма тексереміз
                 const icon = el.querySelector('i');
-                
-                // Тексті ауыстырамыз (Бұл иконканы өшіреді)
                 el.innerText = translations[lang][key];
-                
-                // Егер иконка болған болса, оны қайтадан соңына қосамыз
+                // Иконканы сақтап қалу (Interests үшін)
                 if (icon) {
                     el.appendChild(icon);
+                }
+                
+                // Егер бұл чаттың сәлемдесу хабарламасы болса, HTML ретінде қоямыз (bold тегтері үшін)
+                if (key === 'bot_welcome') {
+                    el.innerHTML = translations[lang][key];
                 }
             }
         });
@@ -89,7 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     langBtns.forEach(btn => btn.addEventListener('click', () => changeLanguage(btn.getAttribute('data-lang'))));
     
-    const savedLang = localStorage.getItem('lang') || 'kz';
+    // --- ӨЗГЕРІС: DEFAULT LANGUAGE = 'en' ---
+    const savedLang = localStorage.getItem('lang') || 'en';
     changeLanguage(savedLang);
 
     // 3. SCROLL REVEAL
@@ -136,4 +146,133 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.querySelector('.mobile-menu-overlay');
     burger.addEventListener('click', () => { burger.classList.toggle('toggle'); mobileMenu.classList.toggle('active'); document.body.classList.toggle('no-scroll'); });
     document.querySelectorAll('.mobile-links a').forEach(link => link.addEventListener('click', () => { burger.classList.remove('toggle'); mobileMenu.classList.remove('active'); document.body.classList.remove('no-scroll'); }));
+
+    // 5. TYPEWRITER EFFECT
+    const typed = new Typed('.multiple-text', {
+        strings: ['a Mobile Developer', 'a Web Developer', 'an AI Engineer'],
+        typeSpeed: 100,
+        backSpeed: 50,
+        backDelay: 1000,
+        loop: true
+    });
+
+    // 6. AI CHATBOT LOGIC (MULTILINGUAL)
+    const chatToggleBtn = document.getElementById('chat-toggle-btn');
+    const chatWindow = document.querySelector('.chat-window');
+    const closeChatBtn = document.getElementById('close-chat');
+    const sendBtn = document.getElementById('send-btn');
+    const userInput = document.getElementById('user-input');
+    const chatMessages = document.getElementById('chat-messages');
+
+    function toggleChat() {
+        chatWindow.classList.toggle('hidden-chat');
+        if (!chatWindow.classList.contains('hidden-chat')) {
+            setTimeout(() => userInput.focus(), 300);
+        }
+    }
+    chatToggleBtn.addEventListener('click', toggleChat);
+    closeChatBtn.addEventListener('click', toggleChat);
+
+    function sendMessage() {
+        const text = userInput.value.trim();
+        if (text === "") return;
+
+        addMessage(text, 'user-message');
+        userInput.value = '';
+
+        const loadingId = showTypingIndicator();
+
+        setTimeout(() => {
+            removeTypingIndicator(loadingId);
+            const reply = getBotReply(text);
+            addMessage(reply, 'bot-message');
+        }, 1000);
+    }
+
+    sendBtn.addEventListener('click', sendMessage);
+    userInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') sendMessage();
+    });
+
+    function addMessage(text, className) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `message ${className}`;
+        msgDiv.innerHTML = text;
+        chatMessages.appendChild(msgDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function showTypingIndicator() {
+        const id = 'typing-' + Date.now();
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `message bot-message`;
+        msgDiv.id = id;
+        msgDiv.innerHTML = '<i class="fas fa-ellipsis-h" style="animation: blink 1s infinite;"></i>';
+        chatMessages.appendChild(msgDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        return id;
+    }
+
+    function removeTypingIndicator(id) {
+        const el = document.getElementById(id);
+        if (el) el.remove();
+    }
+
+    // --- БОТ МИЫ (3 ТІЛДЕ) ---
+    function getBotReply(input) {
+        const lowerInput = input.toLowerCase();
+        // Қазіргі тілді аламыз (default: en)
+        const currentLang = localStorage.getItem('lang') || 'en';
+
+        // --- KAZAKH ---
+        if (currentLang === 'kz') {
+            if (lowerInput.includes('сәлем') || lowerInput.includes('қалай') || lowerInput.includes('аман')) {
+                return "Сәлем! Қалыңыз қалай? Сізге қалай көмектесе аламын? 😊";
+            }
+            if (lowerInput.includes('дағды') || lowerInput.includes('білесің') || lowerInput.includes('стек')) {
+                return "Мен <b>Mobile (iOS/Android)</b>, <b>Web Development</b> және <b>AI</b> саласында маманданғанмын. Негізгі құралдарым: Java, Kotlin, HTML/CSS/JS.";
+            }
+            if (lowerInput.includes('байланыс') || lowerInput.includes('нөмір') || lowerInput.includes('пошта')) {
+                return "Маған жазыңыз: <a href='mailto:aubakirovdosymzhan@gmail.com' style='color: #34d399;'>Email</a> немесе <a href='https://t.me/dosymzhan_aubakir' target='_blank' style='color: #34d399;'>Telegram</a>.";
+            }
+            if (lowerInput.includes('жоба') || lowerInput.includes('портфолио')) {
+                return "Менің жобаларымды <a href='https://github.com/dossymzhanaubakirov-prog' target='_blank' style='color: #34d399;'>GitHub</a> парақшамнан көре аласыз!";
+            }
+            return "Кешіріңіз, түсінбедім. Менің <b>дағдыларым</b> немесе <b>байланыс</b> туралы сұрап көріңіз.";
+        }
+
+        // --- RUSSIAN ---
+        if (currentLang === 'ru') {
+            if (lowerInput.includes('привет') || lowerInput.includes('здравствуй') || lowerInput.includes('как дела')) {
+                return "Привет! Как я могу помочь вам сегодня? 😊";
+            }
+            if (lowerInput.includes('навык') || lowerInput.includes('умеешь') || lowerInput.includes('стек')) {
+                return "Я специализируюсь на <b>Mobile</b>, <b>Web</b> и <b>AI</b>. Мой стек: Java, Kotlin, HTML/CSS/JS и современные AI инструменты.";
+            }
+            if (lowerInput.includes('контакт') || lowerInput.includes('номер') || lowerInput.includes('почта')) {
+                return "Пишите мне на <a href='mailto:aubakirovdosymzhan@gmail.com' style='color: #34d399;'>Email</a> или в <a href='https://t.me/dosymzhan_aubakir' target='_blank' style='color: #34d399;'>Telegram</a>.";
+            }
+            if (lowerInput.includes('проект') || lowerInput.includes('портфолио') || lowerInput.includes('работа')) {
+                return "Мои проекты доступны на <a href='https://github.com/dossymzhanaubakirov-prog' target='_blank' style='color: #34d399;'>GitHub</a>. Взгляните!";
+            }
+            return "Извините, я не понял. Спросите про мои <b>навыки</b> или <b>контакты</b>.";
+        }
+
+        // --- ENGLISH (Default) ---
+        // (Егер 'en' болса немесе басқа тіл болса)
+        if (lowerInput.includes('hello') || lowerInput.includes('hi')) {
+            return "Hello! How can I help you today? 😊";
+        }
+        if (lowerInput.includes('skill') || lowerInput.includes('know') || lowerInput.includes('stack')) {
+            return "I specialize in <b>Mobile</b>, <b>Web</b>, and <b>AI</b>. My core stack includes Java, Kotlin, HTML/CSS/JS.";
+        }
+        if (lowerInput.includes('contact') || lowerInput.includes('email') || lowerInput.includes('number')) {
+            return "You can email me at: <a href='mailto:aubakirovdosymzhan@gmail.com' style='color: #34d399;'>Email</a> or DM me on <a href='https://t.me/dosymzhan_aubakir' target='_blank' style='color: #34d399;'>Telegram</a>.";
+        }
+        if (lowerInput.includes('project') || lowerInput.includes('work') || lowerInput.includes('portfolio')) {
+            return "Check out my code on <a href='https://github.com/dossymzhanaubakirov-prog' target='_blank' style='color: #34d399;'>GitHub</a>!";
+        }
+        return "I'm not sure. Try asking about my <b>skills</b> or <b>contacts</b>.";
+    }
+
 });
