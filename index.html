@@ -32,9 +32,9 @@
 
             <div class="nav-actions">
                 <div class="lang-switch desktop-lang">
-                    <span class="lang-btn active" data-lang="kz">KZ</span>
+                    <span class="lang-btn" data-lang="kz">KZ</span>
                     <span class="divider">|</span>
-                    <span class="lang-btn" data-lang="en">EN</span>
+                    <span class="lang-btn active" data-lang="en">EN</span>
                     <span class="divider">|</span>
                     <span class="lang-btn" data-lang="ru">RU</span>
                 </div>
@@ -58,9 +58,9 @@
             </ul>
 
             <div class="lang-switch mobile-lang">
-                <span class="lang-btn active" data-lang="kz">KZ</span>
+                <span class="lang-btn" data-lang="kz">KZ</span>
                 <span class="divider">|</span>
-                <span class="lang-btn" data-lang="en">EN</span>
+                <span class="lang-btn active" data-lang="en">EN</span>
                 <span class="divider">|</span>
                 <span class="lang-btn" data-lang="ru">RU</span>
             </div>
@@ -71,7 +71,7 @@
         <div class="hero-content glass">
             <h3 data-i18n="hero_greeting">Hello, I'm</h3>
             <h1 data-i18n="hero_name">Dosymzhan Aubakir</h1>
-            <h2 data-i18n="hero_role">Mobile / Web / AI Developer</h2>
+            <h2>I am <span class="multiple-text"></span></h2>
             <p data-i18n="hero_desc">Developing in Mobile, Web, and AI directions. Passionate about modern technologies and Artificial Intelligence.</p>
             <div class="cta-buttons">
                 <a href="#contact" class="btn btn-primary" data-i18n="btn_contact">Contact Me</a>
@@ -205,9 +205,7 @@
                     <a href="https://www.instagram.com/dossymzhan_aubakir/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
                     <a href="https://t.me/dosymzhan_aubakir" target="_blank" class="social-icon"><i class="fab fa-telegram"></i></a>
                     <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    
                     <a href="https://github.com/dossymzhanaubakirov-prog" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-                    
                     <a href="mailto:aubakirovdosymzhan@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
                 </div>
                 <p>&copy; 2026 Dosymzhan Aubakir. <span data-i18n="footer_rights">All rights reserved.</span></p>
@@ -215,6 +213,37 @@
         </footer>
     </section>
 
+    <div class="chatbot-container">
+        <div class="chat-window glass hidden-chat">
+            <div class="chat-header">
+                <div class="bot-info">
+                    <div class="bot-avatar"><i class="fas fa-robot"></i></div>
+                    <div>
+                        <h4>Dosymzhan AI</h4>
+                        <span class="status">Online</span>
+                    </div>
+                </div>
+                <button id="close-chat"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot-message" data-i18n="bot_welcome">
+                    Hello! 👋 I am Dosymzhan's virtual assistant. Ask me about his <b>skills</b>, <b>contacts</b>, or <b>experience</b>!
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <input type="text" id="user-input" placeholder="..." autocomplete="off">
+                <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+        <button id="chat-toggle-btn" class="glass">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
