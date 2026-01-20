@@ -81,7 +81,17 @@ ul { list-style: none; }
    ========================================= */
 .hero-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; gap: 4rem; padding: 120px 10% 0; flex-wrap: wrap; position: relative; }
 .hero-content { flex: 1; padding: 2rem; min-width: 300px; }
-.hero-content h1 { font-size: 3.5rem; margin: 0.5rem 0; background: linear-gradient(to right, var(--text-primary), var(--accent-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+
+/* --- 1. АТЫҢЫЗДЫҢ ШРИФТІ (ДЕСКТОП) --- */
+.hero-content h1 { 
+    font-size: 3rem; /* 3.5rem-нен 3rem-ге кішірейді */
+    margin: 0.5rem 0; 
+    background: linear-gradient(to right, var(--text-primary), var(--accent-color)); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    font-weight: 700; 
+}
+
 .hero-content h2 { font-size: 1.5rem; color: var(--accent-color); margin-bottom: 1rem; font-weight: 500; }
 .hero-content p { color: var(--text-secondary); margin-bottom: 2.5rem; line-height: 1.7; font-size: 1.1rem; }
 
@@ -205,37 +215,37 @@ footer { padding: 3rem; text-align: center; margin-top: 4rem; border-radius: 30p
    9. MOBILE & TABLET ADAPTATION (ТҮЗЕТІЛГЕН)
    ========================================= */
 @media screen and (max-width: 1024px) {
-    /* Меню (Бургер шетке жабыспауы үшін) */
     .navbar { min-width: unset; width: 90%; padding: 10px 20px; }
     .nav-links { display: none !important; }
-    .burger { display: flex; margin-right: 15px; /* Шеттен алшақтату */ }
+    .burger { display: flex; margin-right: 15px; }
     .nav-actions { margin-left: auto; border: none; padding-left: 0; }
     
-    /* Hero секциясы */
     .hero-section { flex-direction: column-reverse; text-align: center; padding-top: 140px; height: auto; }
     
-    /* Мәтін картасы */
     .hero-content { 
         width: 90%; 
         height: auto; 
         animation: none; 
-        padding: 4rem 2rem; 
+        padding: 6rem 2rem; 
         display: flex;
         flex-direction: column;
         align-items: center; 
         gap: 20px; 
     }
     
-    .hero-content h1 { font-size: 2.3rem; line-height: 1.2; }
+    /* --- 2. АТЫҢЫЗДЫҢ ШРИФТІ (МОБИЛЬДІ) --- */
+    .hero-content h1 { 
+        font-size: 2rem; /* 2.3rem-нен 2rem-ге кішірейді */
+        line-height: 1.2; 
+    }
+    
     .hero-content h2 { font-size: 1.2rem; margin-top: 5px; }
     
     .hero-image { width: 300px; height: 400px; animation: none; margin-bottom: 2rem; }
 
-    /* Батырмалар */
     .cta-buttons { justify-content: center; width: 100%; gap: 15px; }
     .btn { width: 100%; max-width: 300px; margin: 0; }
 
-    /* Timeline */
     .timeline::after { left: 50% !important; } 
     .timeline-item { width: 42% !important; padding: 1rem !important; margin-bottom: 2rem !important; }
     .timeline-item:nth-child(even) { left: 55% !important; text-align: left; }
@@ -246,10 +256,9 @@ footer { padding: 3rem; text-align: center; margin-top: 4rem; border-radius: 30p
     .timeline-item p { font-size: 0.8rem; line-height: 1.3; }
     .date { font-size: 0.75rem; }
 
-    /* --- ЖАҢА ӨЗГЕРІС: Тақырыпты кішірейту (Қызығушылықтарым) --- */
     .section-title {
-        font-size: 1.8rem !important; /* Мобильдіде кішірейту */
-        overflow-wrap: break-word; /* Ұзын сөздерді тасымалдау */
+        font-size: 1.8rem !important;
+        overflow-wrap: break-word;
         padding: 0 10px;
     }
 }
