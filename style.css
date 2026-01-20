@@ -262,3 +262,89 @@ footer { padding: 3rem; text-align: center; margin-top: 4rem; border-radius: 30p
         padding: 0 10px;
     }
 }
+
+/* =========================================
+   9. MOBILE & TABLET ADAPTATION (PERFECT CIRCLE + ANIMATION)
+   ========================================= */
+@media screen and (max-width: 1024px) {
+    /* Меню (Бургер шетке жабыспауы үшін) */
+    .navbar { min-width: unset; width: 90%; padding: 10px 20px; }
+    .nav-links { display: none !important; }
+    .burger { display: flex; margin-right: 15px; }
+    .nav-actions { margin-left: auto; border: none; padding-left: 0; }
+    
+    /* Hero секциясы */
+    .hero-section { flex-direction: column-reverse; text-align: center; padding-top: 140px; height: auto; }
+    
+    /* Мәтін картасы */
+    .hero-content { 
+        width: 90%; 
+        height: auto; 
+        animation: none; 
+        padding: 6rem 2rem; 
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        gap: 20px; 
+    }
+    
+    .hero-content h1 { font-size: 2rem; line-height: 1.2; }
+    .hero-content h2 { font-size: 1.2rem; margin-top: 5px; }
+    
+    /* --- СУРЕТ КАРТАСЫ (ДОМАЛАҚ + АНИМАЦИЯ) --- */
+    .hero-image { 
+        /* Ені мен биіктігі бірдей болуы шарт! */
+        width: 300px;        
+        height: 300px;       
+        margin-bottom: 2rem;
+        
+        /* Идеалды домалақ */
+        border-radius: 50%; 
+        
+        /* Баяу қалқу анимациясы */
+        animation: float-mobile 6s ease-in-out infinite;
+    }
+
+    /* Ішкі контейнер де домалақ болуы керек */
+    .image-placeholder {
+        border-radius: 50% !important; 
+    }
+
+    /* ҚАЛҚУ АНИМАЦИЯСЫ */
+    @keyframes float-mobile {
+        0% {
+            transform: translateY(0px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        50% {
+            transform: translateY(-20px); /* Жоғары көтеріледі */
+            box-shadow: 0 25px 40px rgba(0,0,0,0.4); /* Көлеңкесі үлкейеді */
+        }
+        100% {
+            transform: translateY(0px); /* Орнына келеді */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+    }
+
+    /* Батырмалар */
+    .cta-buttons { justify-content: center; width: 100%; gap: 15px; }
+    .btn { width: 100%; max-width: 300px; margin: 0; }
+
+    /* Timeline */
+    .timeline::after { left: 50% !important; } 
+    .timeline-item { width: 42% !important; padding: 1rem !important; margin-bottom: 2rem !important; }
+    .timeline-item:nth-child(even) { left: 55% !important; text-align: left; }
+    .timeline-item:nth-child(even)::after { left: -18% !important; right: auto !important; }
+    .timeline-item:nth-child(odd) { left: 0 !important; text-align: right; }
+    .timeline-item:nth-child(odd)::after { right: -18% !important; left: auto !important; }
+    .timeline-item h3 { font-size: 0.9rem; }
+    .timeline-item p { font-size: 0.8rem; line-height: 1.3; }
+    .date { font-size: 0.75rem; }
+
+    /* Тақырыпты кішірейту */
+    .section-title {
+        font-size: 1.8rem !important;
+        overflow-wrap: break-word;
+        padding: 0 10px;
+    }
+}
