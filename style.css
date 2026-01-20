@@ -22,10 +22,10 @@
     --shape-2-color: #d4a574;
 }
 
-/* Жұмсақ скролл + Header биіктігін ескеру */
 html { 
     scroll-behavior: smooth; 
-    scroll-padding-top: 100px; /* Меню бөлімнің басын жауып қалмауы үшін */
+    scroll-padding-top: 100px;
+    -webkit-text-size-adjust: 100%; /* iPhone шрифтін дұрыстау */
 }
 
 /* =========================================
@@ -38,9 +38,17 @@ a { text-decoration: none; }
 ul { list-style: none; }
 
 /* =========================================
-   3. ГЛАССМОРФИЗМ
+   3. ГЛАССМОРФИЗМ (Safari Fix)
    ========================================= */
-.glass { background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); border-radius: 24px; transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }
+.glass { 
+    background: var(--glass-bg); 
+    backdrop-filter: var(--glass-blur); 
+    -webkit-backdrop-filter: var(--glass-blur); /* Safari үшін өте маңызды */
+    border: 1px solid var(--glass-border); 
+    box-shadow: var(--glass-shadow); 
+    border-radius: 24px; 
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
+}
 .glass:hover { transform: translateY(-5px); border-color: rgba(255, 255, 255, 0.2); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 20px var(--accent-glow); }
 
 .background-shapes { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; pointer-events: none; }
@@ -50,7 +58,7 @@ ul { list-style: none; }
 @keyframes float { 0% { transform: translate(0, 0); } 100% { transform: translate(40px, 60px); } }
 
 /* =========================================
-   4. МЕНЮ (NAVBAR)
+   4. МЕНЮ
    ========================================= */
 .header-capsule { position: fixed; top: 24px; left: 0; width: 100%; display: flex; justify-content: center; z-index: 1000; padding: 0 20px; pointer-events: none; }
 
@@ -94,7 +102,7 @@ ul { list-style: none; }
 .burger.toggle .line:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
 .burger.toggle .line:nth-child(2) { transform: rotate(-45deg) translate(5px, -5px); }
 
-/* --- МОБИЛЬДІ МЕНЮ (ТҮЗЕТІЛГЕН: ЕЛЕС БАСЫЛУЛАРДЫ ЖОЮ) --- */
+/* МОБИЛЬДІ МЕНЮ OVERLAY (ЕЛЕС МЕНЮДІ ЖОЮ) */
 .mobile-menu-overlay { 
     position: fixed; 
     top: 0; left: 0; 
@@ -104,15 +112,15 @@ ul { list-style: none; }
     z-index: 9999; 
     display: flex; flex-direction: column; align-items: center; justify-content: center; 
     
-    /* МАҢЫЗДЫ: Жабық кезде мүлде жоқ қыламыз */
+    /* iPhone үшін маңызды: жабық кезде көрінбеу керек */
     opacity: 0; 
-    visibility: hidden; /* Бұл кнопкаларды басуға мүмкіндік береді */
+    visibility: hidden; 
     transition: all 0.4s ease; 
 }
 
 .mobile-menu-overlay.active { 
     opacity: 1; 
-    visibility: visible; /* Ашық кезде ғана көрінеді */
+    visibility: visible; 
     pointer-events: auto; 
 }
 
@@ -176,12 +184,53 @@ ul { list-style: none; }
 .hobby-content h3 { font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.3rem; }
 .hobby-content p { font-size: 0.95rem; color: var(--text-secondary); font-weight: 500; }
 
-/* Interests */
+/* --- INTERESTS (iPhone Анимация Fix) --- */
 .interests-wrapper { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-.interest-tag { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-secondary); padding: 10px 25px; border-radius: 50px; font-size: 0.95rem; font-weight: 500; cursor: default; backdrop-filter: blur(5px); display: inline-flex; align-items: center; justify-content: center; transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); overflow: hidden; position: relative; }
-.interest-tag i { max-width: 0; opacity: 0; margin-left: 0; transform: translateX(-10px); transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); color: #fff; }
-.interest-tag:hover { background: linear-gradient(135deg, var(--accent-color), var(--accent-hover)); color: #fff; border-color: transparent; box-shadow: 0 5px 15px var(--accent-glow); transform: translateY(-2px); }
-.interest-tag:hover i { max-width: 25px; opacity: 1; margin-left: 8px; transform: translateX(0); }
+
+.interest-tag { 
+    background: rgba(255, 255, 255, 0.02); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    color: var(--text-secondary); 
+    padding: 10px 25px; 
+    border-radius: 50px; 
+    font-size: 0.95rem; 
+    font-weight: 500; 
+    cursor: default; 
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(5px);
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); 
+    overflow: hidden; 
+    position: relative; 
+}
+
+/* Иконка */
+.interest-tag i { 
+    max-width: 0; 
+    opacity: 0; 
+    margin-left: 0; 
+    transform: translateX(-10px); 
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); 
+    color: #fff; 
+}
+
+/* Hover және Active (Басқан кезде) */
+.interest-tag:hover, .interest-tag:active { 
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover)); 
+    color: #fff; 
+    border-color: transparent; 
+    box-shadow: 0 5px 15px var(--accent-glow); 
+    transform: translateY(-2px); 
+}
+
+.interest-tag:hover i, .interest-tag:active i { 
+    max-width: 25px; 
+    opacity: 1; 
+    margin-left: 8px; 
+    transform: translateX(0); 
+}
 
 /* Timeline */
 .timeline { position: relative; max-width: 800px; margin: 0 auto; }
@@ -195,18 +244,53 @@ ul { list-style: none; }
 .date { font-size: 0.9rem; color: var(--gold-accent); font-weight: 600; display: block; margin-bottom: 0.5rem; }
 .desc { margin-top: 0.5rem; color: var(--text-secondary); }
 
-/* FOOTER (ТҮЗЕТІЛДІ) */
-footer { padding: 3rem; text-align: center; margin-top: 4rem; border-radius: 30px 30px 0 0 !important; position: relative; z-index: 900; }
-.socials { margin-bottom: 1.5rem; display: flex; justify-content: center; gap: 15px; }
-.social-icon { 
-    font-size: 1.8rem; color: var(--text-primary); transition: 0.3s; 
-    /* Иконка басылу аймағы */
-    display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background: rgba(255, 255, 255, 0.05); 
-    position: relative; z-index: 910; cursor: pointer; pointer-events: auto; 
+/* --- FOOTER (БАРЛЫҒЫ БАСЫЛАДЫ) --- */
+footer { 
+    padding: 3rem; 
+    text-align: center; 
+    margin-top: 4rem; 
+    border-radius: 30px 30px 0 0 !important; 
+    position: relative; 
+    z-index: 900; 
 }
-.social-icon:hover { color: #fff; background: var(--accent-color); transform: translateY(-3px); box-shadow: 0 5px 15px var(--accent-glow); }
+.socials { 
+    margin-bottom: 1.5rem; 
+    display: flex; 
+    justify-content: center; 
+    gap: 15px; 
+}
+.social-icon { 
+    font-size: 1.8rem; 
+    color: var(--text-primary); 
+    transition: 0.3s; 
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    background: rgba(255, 255, 255, 0.05); 
+    position: relative; 
+    z-index: 910; 
+    cursor: pointer; 
+    pointer-events: auto; 
+}
+.social-icon:hover { 
+    color: #fff; 
+    background: var(--accent-color); 
+    transform: translateY(-3px); 
+    box-shadow: 0 5px 15px var(--accent-glow);
+}
 
-.hidden { opacity: 0; transform: translateY(100px) scale(0.95); filter: blur(10px); transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+/* SCROLL REVEAL (iPhone-ға арналған GPU Fix) */
+.hidden { 
+    opacity: 0; 
+    transform: translateY(100px) scale(0.95); 
+    filter: blur(10px); 
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    /* iPhone үшін маңызды: */
+    will-change: transform, opacity;
+}
 .show { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
 .skills-card.show, .hobby-card.show, .timeline-item.show { transition-delay: 0.1s; }
 
@@ -290,7 +374,6 @@ footer { padding: 3rem; text-align: center; margin-top: 4rem; border-radius: 30p
     .cta-buttons { justify-content: center; width: 100%; gap: 15px; position: relative; z-index: 100; pointer-events: auto; }
     .btn { width: 100%; max-width: 300px; margin: 0; cursor: pointer; pointer-events: auto; position: relative; z-index: 101; }
 
-    /* Timeline */
     .timeline::after { left: 50% !important; } 
     .timeline-item { width: 42% !important; padding: 1rem !important; margin-bottom: 2rem !important; }
     .timeline-item:nth-child(even) { left: 55% !important; text-align: left; }
