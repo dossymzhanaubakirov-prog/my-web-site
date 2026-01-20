@@ -85,7 +85,7 @@ ul { list-style: none; }
 .hero-content h2 { font-size: 1.5rem; color: var(--accent-color); margin-bottom: 1rem; font-weight: 500; }
 .hero-content p { color: var(--text-secondary); margin-bottom: 2.5rem; line-height: 1.7; font-size: 1.1rem; }
 
-/* CTA Buttons (ТҮЗЕТІЛДІ: gap қосылды) */
+/* CTA Buttons */
 .cta-buttons { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; }
 .btn { display: inline-block; padding: 1rem 2.5rem; border-radius: 12px; font-weight: 600; transition: all 0.3s; font-size: 1rem; text-align: center; }
 .btn-primary { background: linear-gradient(135deg, var(--accent-color), var(--accent-hover)); color: #fff; box-shadow: 0 4px 15px var(--accent-glow); }
@@ -135,7 +135,7 @@ ul { list-style: none; }
 .interest-tag { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-secondary); padding: 10px 25px; border-radius: 50px; font-size: 0.95rem; font-weight: 500; cursor: default; transition: all 0.3s ease; backdrop-filter: blur(5px); }
 .interest-tag:hover { background: linear-gradient(135deg, var(--accent-color), var(--accent-hover)); color: #fff; border-color: transparent; box-shadow: 0 5px 15px var(--accent-glow); transform: translateY(-3px); }
 
-/* Timeline (DESKTOP DEFAULT) */
+/* Timeline (DESKTOP) */
 .timeline { position: relative; max-width: 800px; margin: 0 auto; }
 .timeline::after { content: ''; position: absolute; width: 2px; background: linear-gradient(to bottom, transparent, var(--accent-color), transparent); top: 0; bottom: 0; left: 50%; transform: translateX(-50%); }
 .timeline-item { padding: 2rem; position: relative; width: 45%; margin-bottom: 3rem; }
@@ -162,147 +162,82 @@ footer { padding: 3rem; text-align: center; margin-top: 4rem; border-radius: 30p
 /* =========================================
    7. HERO IMAGE STYLES
    ========================================= */
-.hero-image { display: flex; justify-content: center; align-items: center; width: 350px; height: 550px; z-index: 1; transition: all 0.3s; }
+.hero-image { display: flex; justify-content: center; align-items: center; width: 350px; height: 500px; z-index: 1; transition: all 0.3s; }
 .image-placeholder { width: 100%; height: 100%; border-radius: 40px; overflow: hidden; padding: 0 !important; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); }
 .my-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* =========================================
-   8. HERO SECTION & ANIMATION (500px Height & Perfect Center)
+   8. HERO ANIMATION (DESKTOP)
    ========================================= */
-
-/* Бұл стильдер тек компьютерде (Desktop) жұмыс істейді */
 @media screen and (min-width: 1025px) {
+    .hero-section { position: relative; justify-content: center; align-items: flex-start; padding-top: 180px; gap: 3rem; min-height: 100vh; }
     
-    .hero-section { 
-        position: relative; 
-        justify-content: center; 
-        align-items: flex-start; 
-        padding-top: 180px; /* Жоғарыдан сәл түсіреміз */
-        gap: 3rem; 
-        min-height: 100vh;
-    }
-    
-    /* --- МӘТІН КАРТАСЫ (ӘДЕМІЛЕУ) --- */
     .hero-content { 
-        flex: none; 
-        width: 600px; 
-        height: 500px; /* Биіктігі 500px */
-        
-        /* Flexbox арқылы идеалды ортаға келтіру */
-        display: flex;
-        flex-direction: column;
-        justify-content: center; /* Вертикальды орта */
-        align-items: flex-start; /* Сол жақ қырға туралау */
-        
-        padding: 3.5rem; /* Ішкі шегініс (кеңірек) */
-        gap: 15px; /* Элементтер арасы (тегіс болу үшін) */
-        
+        flex: none; width: 600px; height: 500px; 
+        display: flex; flex-direction: column; justify-content: center; 
+        padding: 3.5rem; gap: 15px; 
         animation: content-swap 14s infinite cubic-bezier(0.45, 0, 0.55, 1); 
         z-index: 2; 
     }
-
-    /* Элементтерді реттеу */
-    .hero-content h3 { margin: 0; font-size: 1.2rem; opacity: 0.8; }
-    .hero-content h1 { margin: 0; font-size: 3.2rem; line-height: 1.1; }
-    .hero-content h2 { margin: 0; font-size: 1.4rem; margin-bottom: 10px; }
-    .hero-content p { margin: 0; max-width: 95%; line-height: 1.6; margin-bottom: 10px; }
     
-    /* --- СУРЕТ КАРТАСЫ --- */
     .hero-image { 
-        flex: none; 
-        width: 350px; 
-        height: 500px; /* Биіктігі 500px */
-        
+        flex: none; width: 350px; height: 500px; 
         animation: image-swap 14s infinite cubic-bezier(0.45, 0, 0.55, 1); 
         z-index: 1; 
     }
 
-    /* --- АНИМАЦИЯ (ОРЫН АУЫСТЫРУ) --- */
-    /* Мәтін (600px) -> Оңға: 350px (сурет) + 48px (gap) = 398px
-       Сурет (350px) -> Солға: -(600px (мәтін) + 48px (gap)) = -648px
-    */
-
     @keyframes content-swap {
-        0%, 45% { 
-            transform: translateX(0) scale(1); 
-            filter: blur(0); 
-            z-index: 2; 
-        }
-        50% { 
-            transform: translateX(200px) scale(0.85); 
-            filter: blur(5px); 
-            z-index: 1; 
-        }
-        55%, 95% { 
-            transform: translateX(398px) scale(1); 
-            filter: blur(0); 
-            z-index: 1; 
-        }
-        100% { 
-            transform: translateX(0) scale(1); 
-            z-index: 2; 
-        }
+        0%, 45% { transform: translateX(0) scale(1); filter: blur(0); z-index: 2; }
+        50% { transform: translateX(200px) scale(0.85); filter: blur(5px); z-index: 1; }
+        55%, 95% { transform: translateX(398px) scale(1); filter: blur(0); z-index: 1; }
+        100% { transform: translateX(0) scale(1); z-index: 2; }
     }
 
     @keyframes image-swap {
-        0%, 45% { 
-            transform: translateX(0) scale(1); 
-            filter: blur(0); 
-            z-index: 1; 
-        }
-        50% { 
-            transform: translateX(-324px) scale(1.1); 
-            filter: blur(5px); 
-            z-index: 3; 
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5); 
-        }
-        55%, 95% { 
-            transform: translateX(-648px) scale(1); 
-            filter: blur(0); 
-            z-index: 3; 
-        }
-        100% { 
-            transform: translateX(0) scale(1); 
-            z-index: 1; 
-        }
+        0%, 45% { transform: translateX(0) scale(1); filter: blur(0); z-index: 1; }
+        50% { transform: translateX(-324px) scale(1.1); filter: blur(5px); z-index: 3; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+        55%, 95% { transform: translateX(-648px) scale(1); filter: blur(0); z-index: 3; }
+        100% { transform: translateX(0) scale(1); z-index: 1; }
     }
 }
 
 /* =========================================
-   9. MOBILE & TABLET ADAPTATION (ТЕЛЕФОН)
+   9. MOBILE & TABLET ADAPTATION (ТҮЗЕТІЛГЕН)
    ========================================= */
 @media screen and (max-width: 1024px) {
-    /* Менюді жасыру және бургерді көрсету */
+    /* Меню (Бургер шетке жабыспауы үшін) */
     .navbar { min-width: unset; width: 90%; padding: 10px 20px; }
     .nav-links { display: none !important; }
-    .burger { display: flex; }
+    .burger { display: flex; margin-left: 15px; /* Шеттен алшақтату */ }
     .nav-actions { margin-left: auto; border: none; padding-left: 0; }
     
-    /* Hero секциясын ортаға келтіру және анимацияны өшіру */
+    /* Hero секциясы */
     .hero-section { flex-direction: column-reverse; text-align: center; padding-top: 140px; height: auto; }
-    .hero-content { width: 100%; height: auto; animation: none; }
+    
+    /* Мәтін картасы (Атыңыз сыю үшін шрифт кішірейтілді) */
+    .hero-content { 
+        width: 90%; /* Экранға сыю үшін */
+        height: auto; 
+        animation: none; 
+        padding: 2rem; /* Ішкі шегіністі азайттық */
+    }
+    
+    .hero-content h1 { font-size: 2.5rem; /* Атыңыздың өлшемін кішірейттік */ }
+    .hero-content h2 { font-size: 1.2rem; }
+    
     .hero-image { width: 300px; height: 400px; animation: none; margin-bottom: 2rem; }
 
-    /* Батырмалар ортаға және gap */
+    /* Батырмалар */
     .cta-buttons { justify-content: center; width: 100%; gap: 15px; }
     .btn { width: 100%; max-width: 300px; margin: 0; }
 
-    /* --- TIMELINE (ТЕЛЕФОНДА ЕКІ ЖАҚТА ҚАЛАДЫ) --- */
-    /* Ортадағы сызық қалады */
+    /* Timeline (Телефонда екі жақта қалуы үшін) */
     .timeline::after { left: 50% !important; } 
-    
-    /* Карталарды кішірейтеміз, бірақ екі жаққа қоямыз */
     .timeline-item { width: 42% !important; padding: 1rem !important; margin-bottom: 2rem !important; }
-
-    /* Оң жақ */
     .timeline-item:nth-child(even) { left: 55% !important; text-align: left; }
-    .timeline-item:nth-child(even)::after { left: -18% !important; right: auto !important; } /* Нүктені туралау */
-
-    /* Сол жақ */
+    .timeline-item:nth-child(even)::after { left: -18% !important; right: auto !important; }
     .timeline-item:nth-child(odd) { left: 0 !important; text-align: right; }
-    .timeline-item:nth-child(odd)::after { right: -18% !important; left: auto !important; } /* Нүктені туралау */
-
-    /* Мәтіндерді кішірейту */
+    .timeline-item:nth-child(odd)::after { right: -18% !important; left: auto !important; }
     .timeline-item h3 { font-size: 0.9rem; }
     .timeline-item p { font-size: 0.8rem; line-height: 1.3; }
     .date { font-size: 0.75rem; }
