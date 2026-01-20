@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dosymzhan Aubakir | Developer</title>
-    
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,7 +17,7 @@
 
     <header class="header-capsule">
         <nav class="navbar glass">
-            <a href="#hero" class="logo">Dosymzhan<span></span></a>
+            <a href="#hero" class="logo">Dosymzhan<span>.</span></a>
 
             <ul class="nav-links">
                 <div class="active-indicator"></div> 
@@ -34,7 +31,7 @@
             </ul>
 
             <div class="nav-actions">
-                <div class="lang-switch">
+                <div class="lang-switch desktop-lang">
                     <span class="lang-btn active" data-lang="kz">KZ</span>
                     <span class="divider">|</span>
                     <span class="lang-btn" data-lang="en">EN</span>
@@ -59,6 +56,14 @@
                 <li><a href="#education" data-i18n="nav_exp">Experience</a></li>
                 <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
             </ul>
+
+            <div class="lang-switch mobile-lang">
+                <span class="lang-btn active" data-lang="kz">KZ</span>
+                <span class="divider">|</span>
+                <span class="lang-btn" data-lang="en">EN</span>
+                <span class="divider">|</span>
+                <span class="lang-btn" data-lang="ru">RU</span>
+            </div>
         </div>
     </header>
 
@@ -67,16 +72,12 @@
             <h3 data-i18n="hero_greeting">Hello, I'm</h3>
             <h1 data-i18n="hero_name">Dosymzhan Aubakir</h1>
             <h2 data-i18n="hero_role">Mobile / Web / AI Developer</h2>
-            <p data-i18n="hero_desc">
-                Developing in Mobile, Web, and AI directions. Passionate about modern technologies and Artificial Intelligence.
-            </p>
-            
+            <p data-i18n="hero_desc">Developing in Mobile, Web, and AI directions. Passionate about modern technologies and Artificial Intelligence.</p>
             <div class="cta-buttons">
                 <a href="#contact" class="btn btn-primary" data-i18n="btn_contact">Contact Me</a>
                 <a href="#" class="btn btn-outline"><span data-i18n="btn_cv">Download CV</span> <i class="fas fa-download"></i></a>
             </div>
         </div>
-        
         <div class="hero-image">
             <div class="image-placeholder glass">
                 <img src="me.png" alt="Dosymzhan Aubakir" class="my-photo">
@@ -87,24 +88,20 @@
     <section id="about" class="section-padding">
         <div class="container glass hidden">
             <h2 class="section-title" data-i18n="about_title">About Me</h2>
-            <p class="about-text text-center" data-i18n="about_text">
-                I am a specialist from Kazakhstan with a degree in Computer Science. My interest in IT started in school with hardware repair. Now I create applications via AI Vibe Coding and solve complex technical tasks.
-            </p>
+            <p class="about-text text-center" data-i18n="about_text">...</p>
         </div>
     </section>
-
+    
     <section id="skills" class="section-padding">
         <h2 class="section-title hidden" data-i18n="skills_title">My Skills</h2>
         <div class="skills-container">
-            
             <div class="skills-card glass hidden">
                 <h3 data-i18n="hard_skills_title">Hard Skills</h3>
-                <div class="skill-bar"><div class="info"><p>Java / Kotlin (Android)</p><p>90%</p></div><div class="bar"><span class="android" style="width: 90%"></span></div></div>
-                <div class="skill-bar"><div class="info"><p>HTML / CSS / JavaScript</p><p>85%</p></div><div class="bar"><span class="web" style="width: 85%"></span></div></div>
+                <div class="skill-bar"><div class="info"><p>Java / Kotlin</p><p>90%</p></div><div class="bar"><span class="android" style="width: 90%"></span></div></div>
+                <div class="skill-bar"><div class="info"><p>HTML / CSS / JS</p><p>85%</p></div><div class="bar"><span class="web" style="width: 85%"></span></div></div>
                 <div class="skill-bar"><div class="info"><p>AI Vibe Coding</p><p>95%</p></div><div class="bar"><span class="ai" style="width: 95%"></span></div></div>
                 <div class="skill-bar"><div class="info"><p>Computer Repair</p><p>100%</p></div><div class="bar"><span class="hardware" style="width: 100%"></span></div></div>
             </div>
-
             <div class="skills-card glass hidden">
                 <h3 data-i18n="lang_title">Languages</h3>
                 <div class="languages-list">
@@ -113,7 +110,6 @@
                     <div class="lang-item"><div class="lang-info"><span data-i18n="lang_en">English</span><span class="lang-level elementary" data-i18n="level_elem">Elementary</span></div><div class="bar"><span class="elem-bar" style="width: 35%"></span></div></div>
                 </div>
             </div>
-
             <div class="skills-card glass hidden">
                 <h3 data-i18n="soft_skills_title">Soft Skills</h3>
                 <div class="tags-cloud">
@@ -138,34 +134,36 @@
         </div>
     </section>
 
-    <section id="interests" class="section-padding">
+   <section id="interests" class="section-padding">
         <div class="container glass hidden">
             <h2 class="section-title" data-i18n="interests_title">My Interests</h2>
             <div class="interests-wrapper">
-                <span class="interest-tag" data-i18n="int_it">IT</span>
-                <span class="interest-tag" data-i18n="int_tech">Technology</span>
-                <span class="interest-tag" data-i18n="int_company">Company</span>
-                <span class="interest-tag" data-i18n="int_world">World</span>
-                <span class="interest-tag" data-i18n="int_planet">Planet</span>
-                <span class="interest-tag" data-i18n="int_sports">Sports</span>
-                <span class="interest-tag" data-i18n="int_movie">Movie</span>
-                <span class="interest-tag" data-i18n="int_music">Music</span>
-                <span class="interest-tag" data-i18n="int_natural">Natural</span>
-                <span class="interest-tag" data-i18n="int_business">Business</span>
-                <span class="interest-tag" data-i18n="int_crypto">Crypto</span>
-                <span class="interest-tag" data-i18n="int_science">Science</span>
-                <span class="interest-tag" data-i18n="int_football">Football</span>
-                <span class="interest-tag" data-i18n="int_health">Health</span>
-                <span class="interest-tag" data-i18n="int_news">News</span>
-                <span class="interest-tag" data-i18n="int_politics">Politics</span>
-                <span class="interest-tag" data-i18n="int_travel">Travel</span>
-                <span class="interest-tag" data-i18n="int_stocks">Stocks</span>
-                <span class="interest-tag" data-i18n="int_social">Social Networks</span>
-                <span class="interest-tag" data-i18n="int_gym">Gym</span>
-                <span class="interest-tag" data-i18n="int_ai">Artificial</span>
-                <span class="interest-tag" data-i18n="int_photo">Photo</span>
-                <span class="interest-tag" data-i18n="int_video">Video</span>
-                <span class="interest-tag" data-i18n="int_religion">Religion</span>
+                <span class="interest-tag" data-i18n="int_space">Space <i class="fas fa-user-astronaut"></i></span>
+                <span class="interest-tag" data-i18n="int_physics">Physics <i class="fas fa-atom"></i></span>
+                <span class="interest-tag" data-i18n="int_it">IT <i class="fas fa-laptop-code"></i></span>
+                <span class="interest-tag" data-i18n="int_tech">Technology <i class="fas fa-microchip"></i></span>
+                <span class="interest-tag" data-i18n="int_company">Company <i class="fas fa-building"></i></span>
+                <span class="interest-tag" data-i18n="int_world">World <i class="fas fa-earth-americas"></i></span>
+                <span class="interest-tag" data-i18n="int_planet">Planet <i class="fas fa-globe"></i></span>
+                <span class="interest-tag" data-i18n="int_sports">Sports <i class="fas fa-person-running"></i></span>
+                <span class="interest-tag" data-i18n="int_movie">Movie <i class="fas fa-film"></i></span>
+                <span class="interest-tag" data-i18n="int_music">Music <i class="fas fa-music"></i></span>
+                <span class="interest-tag" data-i18n="int_natural">Natural <i class="fas fa-tree"></i></span>
+                <span class="interest-tag" data-i18n="int_business">Business <i class="fas fa-briefcase"></i></span>
+                <span class="interest-tag" data-i18n="int_crypto">Crypto <i class="fab fa-bitcoin"></i></span>
+                <span class="interest-tag" data-i18n="int_science">Science <i class="fas fa-flask"></i></span>
+                <span class="interest-tag" data-i18n="int_football">Football <i class="fas fa-futbol"></i></span>
+                <span class="interest-tag" data-i18n="int_health">Health <i class="fas fa-heart-pulse"></i></span>
+                <span class="interest-tag" data-i18n="int_news">News <i class="fas fa-newspaper"></i></span>
+                <span class="interest-tag" data-i18n="int_politics">Politics <i class="fas fa-landmark"></i></span>
+                <span class="interest-tag" data-i18n="int_travel">Travel <i class="fas fa-plane"></i></span>
+                <span class="interest-tag" data-i18n="int_stocks">Stocks <i class="fas fa-arrow-trend-up"></i></span>
+                <span class="interest-tag" data-i18n="int_social">Social Networks <i class="fas fa-hashtag"></i></span>
+                <span class="interest-tag" data-i18n="int_gym">Gym <i class="fas fa-dumbbell"></i></span>
+                <span class="interest-tag" data-i18n="int_ai">Artificial <i class="fas fa-brain"></i></span>
+                <span class="interest-tag" data-i18n="int_photo">Photo <i class="fas fa-camera"></i></span>
+                <span class="interest-tag" data-i18n="int_video">Video <i class="fas fa-video"></i></span>
+                <span class="interest-tag" data-i18n="int_religion">Religion <i class="fas fa-mosque"></i></span>
             </div>
         </div>
     </section>
@@ -207,7 +205,10 @@
                     <a href="https://www.instagram.com/dossymzhan_aubakir/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
                     <a href="https://t.me/dosymzhan_aubakir" target="_blank" class="social-icon"><i class="fab fa-telegram"></i></a>
                     <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    
+                    <a href="https://github.com/dossymzhanaubakirov-prog" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                    
+                    <a href="mailto:aubakirovdosymzhan@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
                 </div>
                 <p>&copy; 2026 Dosymzhan Aubakir. <span data-i18n="footer_rights">All rights reserved.</span></p>
             </div>
