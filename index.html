@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dosymzhan Aubakir | Developer</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+    </div>
+
+    <header class="header-capsule">
+        <nav class="navbar glass">
+            <a href="#hero" class="logo">Dosymzhan<span></span></a>
+
+            <ul class="nav-links">
+                <div class="active-indicator"></div> 
+                <li><a href="#hero" class="nav-item active" data-i18n="nav_home">Home</a></li>
+                <li><a href="#about" class="nav-item" data-i18n="nav_about">About</a></li>
+                <li><a href="#skills" class="nav-item" data-i18n="nav_skills">Skills</a></li>
+                <li><a href="#hobbies" class="nav-item" data-i18n="nav_hobbies">Hobbies</a></li>
+                <li><a href="#interests" class="nav-item" data-i18n="nav_interests">Interests</a></li>
+                <li><a href="#education" class="nav-item" data-i18n="nav_exp">Experience</a></li>
+                <li><a href="#contact" class="nav-item" data-i18n="nav_contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <div class="lang-switch">
+                    <span class="lang-btn active" data-lang="kz">KZ</span>
+                    <span class="divider">|</span>
+                    <span class="lang-btn" data-lang="en">EN</span>
+                    <span class="divider">|</span>
+                    <span class="lang-btn" data-lang="ru">RU</span>
+                </div>
+
+                <div class="burger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="mobile-menu-overlay">
+            <ul class="mobile-links">
+                <li><a href="#hero" data-i18n="nav_home">Home</a></li>
+                <li><a href="#about" data-i18n="nav_about">About</a></li>
+                <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+                <li><a href="#hobbies" data-i18n="nav_hobbies">Hobbies</a></li>
+                <li><a href="#interests" data-i18n="nav_interests">Interests</a></li>
+                <li><a href="#education" data-i18n="nav_exp">Experience</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-content glass">
+            <h3 data-i18n="hero_greeting">Hello, I'm</h3>
+            <h1 data-i18n="hero_name">Dosymzhan Aubakir</h1>
+            <h2 data-i18n="hero_role">Mobile / Web / AI Developer</h2>
+            <p data-i18n="hero_desc">
+                Developing in Mobile, Web, and AI directions. Passionate about modern technologies and Artificial Intelligence.
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary" data-i18n="btn_contact">Contact Me</a>
+                <a href="#" class="btn btn-outline"><span data-i18n="btn_cv">Download CV</span> <i class="fas fa-download"></i></a>
+            </div>
+        </div>
+        
+        <div class="hero-image">
+            <div class="image-placeholder glass">
+                <img src="me.png" alt="Dosymzhan Aubakir" class="my-photo">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding">
+        <div class="container glass hidden">
+            <h2 class="section-title" data-i18n="about_title">About Me</h2>
+            <p class="about-text text-center" data-i18n="about_text">
+                I am a specialist from Kazakhstan with a degree in Computer Science. My interest in IT started in school with hardware repair. Now I create applications via AI Vibe Coding and solve complex technical tasks.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills" class="section-padding">
+        <h2 class="section-title hidden" data-i18n="skills_title">My Skills</h2>
+        <div class="skills-container">
+            
+            <div class="skills-card glass hidden">
+                <h3 data-i18n="hard_skills_title">Hard Skills</h3>
+                <div class="skill-bar"><div class="info"><p>Java / Kotlin (Android)</p><p>90%</p></div><div class="bar"><span class="android" style="width: 90%"></span></div></div>
+                <div class="skill-bar"><div class="info"><p>HTML / CSS / JavaScript</p><p>85%</p></div><div class="bar"><span class="web" style="width: 85%"></span></div></div>
+                <div class="skill-bar"><div class="info"><p>AI Vibe Coding</p><p>95%</p></div><div class="bar"><span class="ai" style="width: 95%"></span></div></div>
+                <div class="skill-bar"><div class="info"><p>Computer Repair</p><p>100%</p></div><div class="bar"><span class="hardware" style="width: 100%"></span></div></div>
+            </div>
+
+            <div class="skills-card glass hidden">
+                <h3 data-i18n="lang_title">Languages</h3>
+                <div class="languages-list">
+                    <div class="lang-item"><div class="lang-info"><span data-i18n="lang_kz">Kazakh</span><span class="lang-level native" data-i18n="level_native">Native</span></div><div class="bar"><span class="native-bar" style="width: 100%"></span></div></div>
+                    <div class="lang-item"><div class="lang-info"><span data-i18n="lang_ru">Russian</span><span class="lang-level intermediate" data-i18n="level_inter">Intermediate</span></div><div class="bar"><span class="inter-bar" style="width: 70%"></span></div></div>
+                    <div class="lang-item"><div class="lang-info"><span data-i18n="lang_en">English</span><span class="lang-level elementary" data-i18n="level_elem">Elementary</span></div><div class="bar"><span class="elem-bar" style="width: 35%"></span></div></div>
+                </div>
+            </div>
+
+            <div class="skills-card glass hidden">
+                <h3 data-i18n="soft_skills_title">Soft Skills</h3>
+                <div class="tags-cloud">
+                    <span class="tag" data-i18n="soft_1">Problem Solving</span>
+                    <span class="tag" data-i18n="soft_2">Teamwork</span>
+                    <span class="tag" data-i18n="soft_3">Adaptability</span>
+                    <span class="tag" data-i18n="soft_4">Communication</span>
+                    <span class="tag" data-i18n="soft_5">Efficiency</span>
+                    <span class="tag" data-i18n="soft_6">Quality Focus</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hobbies" class="section-padding">
+        <h2 class="section-title hidden" data-i18n="hobby_section_title">Hobbies</h2>
+        <div class="hobbies-grid">
+            <div class="hobby-card glass hidden"><div class="hobby-visual tennis-bg"><i class="fas fa-table-tennis-paddle-ball"></i></div><div class="hobby-content"><h3 data-i18n="hobby_sport_title">Tennis</h3><p data-i18n="hobby_sport_desc">Table & Lawn Tennis</p></div></div>
+            <div class="hobby-card glass hidden"><div class="hobby-visual typing-bg"><i class="fas fa-keyboard"></i></div><div class="hobby-content"><h3 data-i18n="hobby_type_title">Speed Typing</h3><p data-i18n="hobby_type_desc">Fast & Focus</p></div></div>
+            <div class="hobby-card glass hidden"><div class="hobby-visual music-bg"><i class="fas fa-headphones-simple"></i></div><div class="hobby-content"><h3 data-i18n="hobby_clean_title">Music & Order</h3><p data-i18n="hobby_clean_desc">Productive Mood</p></div></div>
+            <div class="hobby-card glass hidden"><div class="hobby-visual info-bg"><i class="fas fa-microchip"></i></div><div class="hobby-content"><h3 data-i18n="hobby_info_title">Tech Research</h3><p data-i18n="hobby_info_desc">New Knowledge</p></div></div>
+        </div>
+    </section>
+
+    <section id="interests" class="section-padding">
+        <div class="container glass hidden">
+            <h2 class="section-title" data-i18n="interests_title">My Interests</h2>
+            <div class="interests-wrapper">
+                <span class="interest-tag" data-i18n="int_it">IT</span>
+                <span class="interest-tag" data-i18n="int_tech">Technology</span>
+                <span class="interest-tag" data-i18n="int_company">Company</span>
+                <span class="interest-tag" data-i18n="int_world">World</span>
+                <span class="interest-tag" data-i18n="int_planet">Planet</span>
+                <span class="interest-tag" data-i18n="int_sports">Sports</span>
+                <span class="interest-tag" data-i18n="int_movie">Movie</span>
+                <span class="interest-tag" data-i18n="int_music">Music</span>
+                <span class="interest-tag" data-i18n="int_natural">Natural</span>
+                <span class="interest-tag" data-i18n="int_business">Business</span>
+                <span class="interest-tag" data-i18n="int_crypto">Crypto</span>
+                <span class="interest-tag" data-i18n="int_science">Science</span>
+                <span class="interest-tag" data-i18n="int_football">Football</span>
+                <span class="interest-tag" data-i18n="int_health">Health</span>
+                <span class="interest-tag" data-i18n="int_news">News</span>
+                <span class="interest-tag" data-i18n="int_politics">Politics</span>
+                <span class="interest-tag" data-i18n="int_travel">Travel</span>
+                <span class="interest-tag" data-i18n="int_stocks">Stocks</span>
+                <span class="interest-tag" data-i18n="int_social">Social Networks</span>
+                <span class="interest-tag" data-i18n="int_gym">Gym</span>
+                <span class="interest-tag" data-i18n="int_ai">Artificial</span>
+                <span class="interest-tag" data-i18n="int_photo">Photo</span>
+                <span class="interest-tag" data-i18n="int_video">Video</span>
+                <span class="interest-tag" data-i18n="int_religion">Religion</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section-padding">
+        <h2 class="section-title hidden" data-i18n="exp_title">Experience & Education</h2>
+        <div class="timeline">
+            <div class="timeline-item glass hidden">
+                <span class="date">2025 – 2026</span>
+                <h3 data-i18n="job1_role">Remote IT Specialist</h3>
+                <p data-i18n="job1_place">Hotel Rixos Turkistan</p>
+                <p class="desc" data-i18n="job1_desc">Managing mobile apps and IT projects remotely, server support.</p>
+            </div>
+            <div class="timeline-item glass hidden">
+                <span class="date">2024 – 2025</span>
+                <h3 data-i18n="job2_role">Freelancer</h3>
+                <p data-i18n="job2_place">Kwork Freelance</p>
+                <p class="desc" data-i18n="job2_desc">Mobile, Web and IT services. Creating apps based on client requirements.</p>
+            </div>
+            <div class="timeline-item glass hidden">
+                <span class="date">2022 – 2024</span>
+                <h3 data-i18n="job3_role">Tender Manager</h3>
+                <p data-i18n="job3_place">Goszakup / Samruk Kazyna</p>
+                <p class="desc" data-i18n="job3_desc">Management of tender and public procurement processes.</p>
+            </div>
+            <div class="timeline-item glass hidden">
+                <span class="date">2021 – 2025</span>
+                <h3 data-i18n="edu_role">Student</h3>
+                <p data-i18n="edu_place">Al-Farabi KazNU</p>
+                <p class="desc" data-i18n="edu_desc">Major: Computer Science.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <footer class="glass">
+            <div class="footer-content">
+                <div class="socials">
+                    <a href="https://www.instagram.com/dossymzhan_aubakir/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://t.me/dosymzhan_aubakir" target="_blank" class="social-icon"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                </div>
+                <p>&copy; 2026 Dosymzhan Aubakir. <span data-i18n="footer_rights">All rights reserved.</span></p>
+            </div>
+        </footer>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
